@@ -198,7 +198,7 @@ format-prefix-foreground = ${colors.foreground}
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = "Mem: "
+format-prefix = "MEM: "
 format-prefix-foreground = ${colors.foreground}
 label = %percentage_used%%
 ;==========================================================
@@ -207,7 +207,7 @@ interval = 60
 type = internal/fs
 mount-0 = /
 format-mounted = <label-mounted>
-label-mounted = Disk: %percentage_used%% 
+label-mounted = DISK: %percentage_used%% 
 ;==========================================================
 [module/date]
 type = internal/date
@@ -285,14 +285,14 @@ poll-interval = 5
 ;   %percentage_raw%
 ;   %time%
 ;   %consumption% (shows current charge rate in watts)
-label-charging = Battery: %percentage%%
+label-charging = BAT: %percentage%%
 
 ; Available tokens:
 ;   %percentage% (default) - is set to 100 if full-at is reached
 ;   %percentage_raw%
 ;   %time%
 ;   %consumption% (shows current discharge rate in watts)
-label-discharging = Battery: %percentage%%
+label-discharging = BAT: %percentage%%
 ;==========================================================
 [module/pulseaudio]
 type = internal/pulseaudio
@@ -374,6 +374,69 @@ card = intel_backlight
 [module/wireless-network]
 type = internal/network
 interface = wlp7s0
+
+; Accumulate values from all interfaces
+; when querying for up/downspeed rate
+; Default: false
+accumulate-stats = true
+
+; Consider an `UNKNOWN` interface state as up.
+; Some devices like USB network adapters have 
+; an unknown state, even when they're running
+; Default: false
+unknown-as-up = true
+; Available tags:
+;   <label-connected> (default)
+;   <ramp-signal>
+format-connected = <ramp-signal> <label-connected>
+
+; Available tags:
+;   <label-disconnected> (default)
+format-disconnected = <label-disconnected>
+
+; Available tags:
+;   <label-connected> (default)
+;   <label-packetloss>
+;   <animation-packetloss>
+format-packetloss = <animation-packetloss> <label-connected>
+
+; All labels support the following tokens:
+;   %ifname%    [wireless+wired]
+;   %local_ip%  [wireless+wired]
+;   %local_ip6% [wireless+wired]
+;   %essid%     [wireless]
+;   %signal%    [wireless]
+;   %upspeed%   [wireless+wired]
+;   %downspeed% [wireless+wired]
+;   %linkspeed% [wired]
+
+; Default: %ifname% %local_ip%
+label-connected = %essid% %local_ip%
+label-connected-foreground = #eefafafa
+
+; Default: (none)
+label-disconnected = not connected
+label-disconnected-foreground = #66ffffff
+
+; Default: (none)
+;label-packetloss = %essid%
+;label-packetloss-foreground = #eefafafa
+
+; Only applies if <ramp-signal> is used
+ramp-signal-0 = 😱
+ramp-signal-1 = 😠
+ramp-signal-2 = 😒
+ramp-signal-3 = 😊
+ramp-signal-4 = 😃
+ramp-signal-5 = 😈
+
+; Only applies if <animation-packetloss> is used
+animation-packetloss-0 = ⚠
+animation-packetloss-0-foreground = #ffa64c
+animation-packetloss-1 = 📶
+animation-packetloss-1-foreground = #000000
+; Framerate in milliseconds
+animation-packetloss-framerate = 500
 ;==========================================================
 [module/wired-network]
 type = internal/network
