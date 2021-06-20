@@ -26,7 +26,7 @@ primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
 ;==========================================================
-[bar/example]
+[bar/default]
 monitor = ${env:MONITOR:}
 width = 100%
 height = 18
@@ -66,7 +66,6 @@ font-4 = Unifont Upper:style=Regular:size=10:antialias=false;0
 font-5 = Siji:style=Regular:pixelsize=10;1;
 
 modules-left = i3 xwindow
-; modules-right = filesystem memory cpu cpu-temp cpu-temp-2 gpu-temp nvme-temp date pulseaudio
 modules-right = wired-network wireless-network xbacklight alsa pulseaudio filesystem memory cpu  battery date powermenu
 
 tray-position = right
@@ -115,7 +114,7 @@ index-sort = true
 wrapping-scroll = false
 
 ; Only show workspaces on the same output as the bar
-;pin-workspaces = true
+pin-workspaces = true
 
 label-mode-padding = 2
 label-mode-foreground = #000
@@ -411,12 +410,12 @@ format-packetloss = <animation-packetloss> <label-connected>
 ;   %linkspeed% [wired]
 
 ; Default: %ifname% %local_ip%
-label-connected = %essid% %local_ip%
+label-connected = %essid% %signal% %local_ip%
 label-connected-foreground = #eefafafa
 
 ; Default: (none)
-label-disconnected = not connected
-label-disconnected-foreground = #66ffffff
+;label-disconnected = not connected
+;label-disconnected-foreground = #66ffffff
 
 ; Default: (none)
 ;label-packetloss = %essid%
@@ -458,7 +457,7 @@ unknown-as-up = true
 ; Available tags:
 ;   <label-connected> (default)
 ;   <ramp-signal>
-format-connected = <ramp-signal> <label-connected>
+format-connected = <label-connected>
 
 ; Available tags:
 ;   <label-disconnected> (default)
@@ -481,24 +480,24 @@ format-packetloss = <animation-packetloss> <label-connected>
 ;   %linkspeed% [wired]
 
 ; Default: %ifname% %local_ip%
-label-connected = %essid% %local_ip%
+label-connected = eth %local_ip%
 label-connected-foreground = #eefafafa
 
 ; Default: (none)
-label-disconnected = not connected
-label-disconnected-foreground = #66ffffff
+;label-disconnected = not connected
+;label-disconnected-foreground = #66ffffff
 
 ; Default: (none)
 ;label-packetloss = %essid%
 ;label-packetloss-foreground = #eefafafa
 
 ; Only applies if <ramp-signal> is used
-ramp-signal-0 = 😱
-ramp-signal-1 = 😠
-ramp-signal-2 = 😒
-ramp-signal-3 = 😊
-ramp-signal-4 = 😃
-ramp-signal-5 = 😈
+;ramp-signal-0 = 😱
+;ramp-signal-1 = 😠
+;ramp-signal-2 = 😒
+;ramp-signal-3 = 😊
+;ramp-signal-4 = 😃
+;ramp-signal-5 = 😈
 
 ; Only applies if <animation-packetloss> is used
 animation-packetloss-0 = ⚠

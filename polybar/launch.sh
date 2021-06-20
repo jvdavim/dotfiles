@@ -1,14 +1,5 @@
 #!/usr/bin/env sh
 
-# handle multiple monitors
-if type "xrandr"; then
-  for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
-    MONITOR=$m polybar --reload example &
-  done
-else
-  polybar --reload example &
-fi
-
 # Terminate already running bar instances
 killall -q polybar
 
@@ -16,6 +7,8 @@ killall -q polybar
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 # Launch bar1 and bar2
-polybar example &
+DISPLAY1="$(xrandr -q | grep 'eDP1\|VGA-1' | cut -d ' ' -f1)"
+[[ ! -z "$DISPLAY1" ]] && MONITOR="$DISPLAY1" polybar default &
 
-echo "Bars launched..."
+DISPLAY2="$(xrandr -q | grep 'HDMI1\|DVI-I-1' | cut -d ' ' -f1)"
+[[ ! -z $DISPLAY2 ]] && MONITOR=$DISPLAY2 polybar default &
