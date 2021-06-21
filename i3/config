@@ -211,3 +211,4 @@ for_window [class="(?i)image lounge"] floating enable
 for_window [class="(?i)leafpad"] floating enable
 for_window [class="(?i)pavucontrol"] floating enable
 for_window [class="(?i)arandr"] floating enable
+for_window [class="(?i)signal"] floating enable
