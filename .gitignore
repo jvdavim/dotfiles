@@ -1,0 +1,28 @@
+Authy Desktop/
+Bitwarden/
+Code/
+JetBrains/
+MongoDB Compass/
+QtProject.conf
+Signal/
+Slack/
+Thunar/
+azuredatastudio/
+cef_user_data/
+configstore/
+dconf/
+discord/
+flameshot/
+google-chrome/
+gtk-2.0/
+htop/
+leafpad/
+microsoft-edge-dev/
+mimeapps.list
+neofetch/
+nitrogen/
+pavucontrol.ini
+pulse/
+systemd/
+vlc/
+xfce4/

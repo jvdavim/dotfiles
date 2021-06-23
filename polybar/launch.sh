@@ -7,8 +7,17 @@ killall -q polybar
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 # Launch bar1 and bar2
-DISPLAY1="$(xrandr -q | grep 'eDP1\|VGA-1' | cut -d ' ' -f1)"
-[[ ! -z "$DISPLAY1" ]] && MONITOR="$DISPLAY1" polybar default &
-
-DISPLAY2="$(xrandr -q | grep 'HDMI1\|DVI-I-1' | cut -d ' ' -f1)"
-[[ ! -z $DISPLAY2 ]] && MONITOR=$DISPLAY2 polybar default &
+outputs=$(xrandr --query | grep " connected" | cut -d" " -f1)
+if [ ${#outputs[@]} < 2 ]; then
+  for m in $outputs; do
+    MONITOR=$m polybar --reload default &
+  done
+else
+  for m in $outputs; do
+    if [ $m == 'eDP1' ]; then
+      MONITOR=$m polybar --reload extension &
+    elif [ $m == 'HDMI1' ]; then
+      MONITOR=$m polybar --reload default &
+    fi
+  done
+fi
