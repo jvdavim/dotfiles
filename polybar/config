@@ -77,8 +77,8 @@ tray-detached = false
 ;wm-restack = i3
 ;override-redirect = true
 
-scroll-up = i3wm-wsnext
-scroll-down = i3wm-wsprev
+scroll-up = #i3.prev
+scroll-down = #i3.next
 
 cursor-click = pointer
 ;cursor-scroll = ns-resize
@@ -118,8 +118,8 @@ font-5 = Siji:style=Regular:pixelsize=10;1;
 modules-left = i3 xwindow
 modules-right = date
 
-scroll-up = i3wm-wsnext
-scroll-down = i3wm-wsprev
+scroll-up = #i3.prev
+scroll-down = #i3.next
 
 cursor-click = pointer
 ;cursor-scroll = ns-resize
@@ -152,7 +152,7 @@ label-empty-padding = 2
 type = internal/i3
 format = <label-state> <label-mode>
 index-sort = true
-wrapping-scroll = false
+wrapping-scroll = true
 
 ; Only show workspaces on the same output as the bar
 pin-workspaces = true
