@@ -65,7 +65,7 @@ font-3 = fixed:pixelsize=10;1
 font-4 = Unifont Upper:style=Regular:size=10:antialias=false;0
 font-5 = Siji:style=Regular:pixelsize=10;1;
 
-modules-left = i3 xwindow
+modules-left = i3
 modules-right = wired-network wireless-network xbacklight alsa pulseaudio filesystem memory cpu battery date
 
 tray-position = right

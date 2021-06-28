@@ -21,6 +21,9 @@ exec --no-startup-id setxkbmap br
 # Set wallpaper
 exec_always --no-startup-id feh --random --bg-scale ~/Pictures/Wallpapers/*
 
+# Set font
+font pango:iosevka Medium Normal 9
+
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
