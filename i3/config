@@ -167,11 +167,10 @@ mode "resize" {
         bindsym Escape mode "default"
         bindsym $mod+r mode "default"
 }
-
 bindsym $mod+r mode "resize"
 
 # Polybar
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh --forest
 
 # Screenshot
 bindsym Print exec flameshot gui
@@ -191,7 +190,6 @@ mode "$mode_system" {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-
 bindsym $mod+Pause mode "$mode_system"
 
 # Media player controls
@@ -203,15 +201,18 @@ bindsym XF86AudioPrev exec playerctl previous
 # Remove mouse focus
 focus_follows_mouse no
 
-mode "gaming" {
-   bindsym $mod+Shift+g mode "default"
-}
-bindsym $mod+Shift+g mode "gaming"
+# Floating windows
+for_window [class="(?i)telegram"] floating enable resize set 460 510
+for_window [class="(?i)thunar"] floating enable resize set 795 515
+for_window [class="(?i)mirage"] floating enable resize set 1000 700
+for_window [class="(?i)leafpad"] floating enable resize set 400 200
+for_window [class="(?i)pavucontrol"] floating enable resize set 750 460
+for_window [class="(?i)arandr"] floating enable resize set 520 520
+for_window [class="(?i)signal"] floating enable resize set 750 460
+for_window [class="(?i)gucharmap"] floating enable resize set 1000 600
 
-for_window [class="(?i)telegram"] floating enable
-for_window [class="(?i)thunar"] floating enable
-for_window [class="(?i)image lounge"] floating enable
-for_window [class="(?i)leafpad"] floating enable
-for_window [class="(?i)pavucontrol"] floating enable
-for_window [class="(?i)arandr"] floating enable
-for_window [class="(?i)signal"] floating enable
+# Assigned windows to workspaces
+assign [class="(?i)telegram"] $ws2
+assign [class="(?i)signal"] $ws2
+assign [class="(?i)firefox"] $ws3
+assign [class="(?i)microsoft-edge-dev"] $ws3

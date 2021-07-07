@@ -8,7 +8,10 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 # Launch bar1 and bar2
 m=$(xrandr --query | grep " connected" | grep " primary" | cut -d" " -f1)
-MONITOR=$m polybar --reload default &
-
+if [ $m != "" ]; then
+  MONITOR=$m polybar --reload default &
+fi
 m=$(xrandr --query | grep " connected" | grep -v " primary" | cut -d" " -f1)
-MONITOR=$m polybar --reload extension &
+if [ $m != "" ]; then
+  MONITOR=$m polybar --reload extension &
+fi

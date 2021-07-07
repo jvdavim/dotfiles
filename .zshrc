@@ -103,6 +103,18 @@ fpath+=${ZDOTDIR:-~}/.zsh_functions
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+export PATH="/home/jvdavim/.local/bin:$PATH"
+export GODEBUG=x509ignoreCN=0
+
+# conda oh-my-zsh autocomplete  as specified in documentation 
+# (https://github.com/esc/conda-zsh-completion/blob/master/_conda)
+autoload -U compinit && compinit
+zstyle ':completion::complete:*' use-cache 1
+zstyle ":conda_zsh_completion:*" use-groups true
+zstyle ":conda_zsh_completion:*" show-unnamed true
+zstyle ":conda_zsh_completion:*" show-global-envs-first true
+
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/home/jvdavim/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
@@ -118,12 +130,3 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-export PATH="/home/jvdavim/.local/bin:$PATH"
-
-# conda oh-my-zsh autocomplete  as specified in documentation 
-# (https://github.com/esc/conda-zsh-completion/blob/master/_conda)
-autoload -U compinit && compinit
-zstyle ':completion::complete:*' use-cache 1
-zstyle ":conda_zsh_completion:*" use-groups true
-zstyle ":conda_zsh_completion:*" show-unnamed true
-zstyle ":conda_zsh_completion:*" show-global-envs-first true
