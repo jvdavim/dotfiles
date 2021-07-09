@@ -210,9 +210,5 @@ for_window [class="(?i)pavucontrol"] floating enable resize set 750 460
 for_window [class="(?i)arandr"] floating enable resize set 520 520
 for_window [class="(?i)signal"] floating enable resize set 750 460
 for_window [class="(?i)gucharmap"] floating enable resize set 1000 600
-
-# Assigned windows to workspaces
-assign [class="(?i)telegram"] $ws2
-assign [class="(?i)signal"] $ws2
-assign [class="(?i)firefox"] $ws3
-assign [class="(?i)microsoft-edge-dev"] $ws3
+for_window [class="(?i)firefox" window_role="Organizer"] floating enable resize set 1000 600
+for_window [class="(?i)bitwarden"] floating enable resize set 980 600
