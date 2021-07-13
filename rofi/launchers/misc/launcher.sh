@@ -17,6 +17,6 @@ dir="$HOME/.config/rofi/launchers/misc"
 
 # comment these lines to disable random style
 themes=($(ls -p --hide="launcher.sh" $dir))
-theme="blurry"
+theme="kde_simplemenu"
 
 rofi -no-lazy-grab -show drun -modi drun -theme $dir/"$theme"
