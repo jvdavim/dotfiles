@@ -2,7 +2,7 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod1
+set $mod Mod4
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -20,6 +20,9 @@ exec --no-startup-id setxkbmap br
 
 # Set wallpaper
 exec_always --no-startup-id feh --random --bg-scale ~/Pictures/Wallpapers/*
+
+# Compton
+exec --no-startup-id picom --config ~/.config/picom/picom.config
 
 # Set font
 font pango:iosevka Medium Normal 9
@@ -202,7 +205,7 @@ bindsym XF86AudioPrev exec playerctl previous
 focus_follows_mouse no
 
 # Floating windows
-for_window [class="(?i)telegram"] floating enable resize set 460 510
+for_window [class="(?i)telegram"] floating enable resize set 452 550
 for_window [class="(?i)thunar"] floating enable resize set 795 515
 for_window [class="(?i)mirage"] floating enable resize set 1000 700
 for_window [class="(?i)leafpad"] floating enable resize set 400 200

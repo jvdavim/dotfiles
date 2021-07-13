@@ -124,6 +124,12 @@ font-8 = feather:style=Regular
 modules-left = i3 xwindow
 modules-right = date
 
+tray-position = right
+tray-padding = 3
+tray-maxsize = 24
+tray-scale = 1
+tray-detached = false
+
 scroll-up = #i3.prev
 scroll-down = #i3.next
 
