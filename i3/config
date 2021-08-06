@@ -22,7 +22,7 @@ exec --no-startup-id setxkbmap br
 exec_always --no-startup-id feh --random --bg-scale ~/Pictures/Wallpapers/*
 
 # Compton
-# exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
+exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
 
 # Set font
 font pango:iosevka Medium Normal 9
@@ -65,16 +65,16 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+ccedilla move right
+bindsym $mod+Shift+j move left 10px
+bindsym $mod+Shift+k move down 10px
+bindsym $mod+Shift+l move up 10px
+bindsym $mod+Shift+ccedilla move right 10px
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+bindsym $mod+Shift+Left move left 50px
+bindsym $mod+Shift+Down move down 50px
+bindsym $mod+Shift+Up move up 50px
+bindsym $mod+Shift+Right move right 50px
 
 # split in horizontal orientation
 bindsym $mod+h split h
