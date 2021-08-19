@@ -96,6 +96,9 @@ bindsym $mod+Shift+space floating toggle
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
 
+# move floating window
+floating_modifier $mod
+
 # focus the parent container
 bindsym $mod+a focus parent
 
@@ -215,3 +218,4 @@ for_window [class="(?i)signal"] floating enable
 for_window [class="(?i)gucharmap"] floating enable
 for_window [class="(?i)firefox" window_role="Organizer"] floating enable
 for_window [class="(?i)bitwarden"] floating enable
+for_window [window_role="pop-up"] floating enable
