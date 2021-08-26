@@ -63,6 +63,7 @@ cursor-click = pointer
 type = internal/xwindow
 label = %title:0:80:...%
 label-padding = 4
+label-maxlen = 50
 ;==========================================================
 [module/bspwm]
 type = internal/bspwm
