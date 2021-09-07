@@ -181,6 +181,9 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh --forest
 # Screenshot
 bindsym Print exec flameshot gui
 
+# Switch nvidia driver
+exec --no-startup-id optimus-manager-qt
+
 set $Locker i3lock -i ~/Pictures/Wallpapers/first.png && sleep 1
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
@@ -219,4 +222,5 @@ for_window [class="(?i)gucharmap"] floating enable
 for_window [class="(?i)nightly" window_role="Organizer"] floating enable
 for_window [class="(?i)bitwarden"] floating enable
 for_window [class="(?i)mpv"] floating enable
+for_window [class="(?i)steam"] floating enable
 for_window [window_role="pop-up"] floating enable
