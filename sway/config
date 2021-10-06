@@ -233,11 +233,6 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 bindsym XF86Search exec bemenu-run
 
-#
-# General apps
-#
-bindsym Print exec flameshot gui
-
 ### Status Bar:
 # Read `man 5 sway-bar` for more information about this section.
 bar {
