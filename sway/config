@@ -26,7 +26,7 @@ input "type:keyboard" {
 }
 
 ### Fonts configuration
-font pango
+font pango:Cantarell 8
 
 ### Output configuration
 #
@@ -218,7 +218,6 @@ mode "resize" {
     bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
-
 #
 # Special keys
 #
@@ -234,21 +233,25 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym XF86Search exec bemenu-run
 
 #
-# Status Bar:
+# General apps
 #
+bindsym Print exec flameshot gui
+
+### Status Bar:
 # Read `man 5 sway-bar` for more information about this section.
 bar {
-    position top
+    # position top
 
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
-    status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
+    # status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
 
-    colors {
-        statusline #ffffff
-        background #323232
-        inactive_workspace #323232 #323232 #9c9c9c
-    }
+    # colors {
+    #     statusline #ffffff
+    #     background #323232
+    #     inactive_workspace #323232 #323232 #9c9c9c
+    # }
+    swaybar_command waybar
 }
 
 include /etc/sway/config.d/*
