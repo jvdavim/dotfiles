@@ -140,7 +140,7 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # move worskpace to other display output
-bindsym $mod+m move workspace to output left
+bindsym $mod+m move workspace to output up
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
