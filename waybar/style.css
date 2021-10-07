@@ -50,7 +50,7 @@ window#waybar.empty {
     border-top: 3px solid #ffffff;
 }
 
-#backlight, #battery.bat1, #battery.bat2, #clock, #cpu, #custom-mail, #custom-poweroff, #custom-weather, #disk, #idle_inhibitor, #memory, #mode, #network.vpn, #network.wifi, #network.ethernet, #network.disconnected, #pulseaudio, #taskbar, #temperature, #tray {
+#backlight, #battery, #clock, #cpu, #custom-mail, #custom-poweroff, #custom-weather, #disk, #idle_inhibitor, #memory, #mode, #network.vpn, #network.wifi, #network.ethernet, #network.disconnected, #pulseaudio, #taskbar, #temperature, #tray {
     padding: 0 6px;
     margin: 0 0px;
     color: #ffffff;
@@ -63,7 +63,7 @@ window#waybar.empty {
     }
 }
 
-#battery.bat2.critical:not(.charging) {
+#battery.critical:not(.charging) {
     background-color: #f53c3c;
     color: #ffffff;
     animation-name: blink;
@@ -71,6 +71,11 @@ window#waybar.empty {
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;
+}
+
+#battery.warning:not(.charging) {
+    background-color: #f5ba3c;
+    color: #ffffff;
 }
 
 #temperature.critical {

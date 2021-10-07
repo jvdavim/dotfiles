@@ -6,7 +6,7 @@
         "height": 20,
         "modules-left": ["sway/workspaces", "sway/window"],
         "modules-center": ["tray"],
-        "modules-right": ["network#vpn", "network#wifi", "network#ethernet", "network#disconnected", "custom/weather", "battery#bat1", "battery#bat2", "disk", "memory", "cpu", "temperature", "pulseaudio", "backlight", "clock", "idle_inhibitor"],
+        "modules-right": ["network#vpn", "network#wifi", "network#ethernet", "network#disconnected", "custom/weather", "battery", "disk", "memory", "cpu", "temperature", "pulseaudio", "backlight", "clock", "idle_inhibitor"],
         "sway/window": {
             "format": "{} ",
             "on-click": "swaymsg kill",
@@ -51,36 +51,21 @@
             "format-icons": ["", ""],
             "on-click": "wdisplays"
         },
-        "battery#bat1": {
+        "battery": {
             "bat": "BAT0",
-            "adapter": "AC",
-            "interval": 10,
+            "adapter": "ADP1",
+            "interval": 5,
             "full-at": 99,
             "states": {
                 "full": 100,
                 "good": 99,
+                "warning": 30,
+                "critical": 15,
                 "empty": 5
             },
             "format": "{icon} {capacity}%",
             "format-charging": " {capacity}%",
             "format-plugged": " {capacity}%",
-            "format-empty": "",
-            "format-full": "",
-            "format-icons": ["", "", "", "", ""]
-        },
-        "battery#bat2": {
-            "bat": "BAT1",
-            "adapter": "AC",
-            "interval": 10,
-            "states": {
-                "full": 100,
-                "good": 99,
-                "critical": 15
-            },
-            "format": "{icon} {capacity}%",
-            "format-charging": " {capacity}%",
-            "format-plugged": " {capacity}%",
-            "format-full": "",
             "format-icons": ["", "", "", "", ""]
         },
         "network#disconnected": {
