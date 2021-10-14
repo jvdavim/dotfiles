@@ -4,9 +4,29 @@
         "layer": "top",
         "position": "top",
         "height": 20,
-        "modules-left": ["sway/workspaces", "sway/window"],
-        "modules-center": ["tray"],
-        "modules-right": ["network#vpn", "network#wifi", "network#ethernet", "network#disconnected", "custom/weather", "battery", "disk", "memory", "cpu", "temperature", "pulseaudio", "backlight", "clock", "idle_inhibitor"],
+        "modules-left": [
+            "sway/workspaces",
+            "sway/window"
+        ],
+        "modules-center": [
+            "tray"
+        ],
+        "modules-right": [
+            "network#vpn",
+            "network#wifi",
+            "network#ethernet",
+            "network#disconnected",
+            "custom/weather",
+            "battery",
+            "disk",
+            "memory",
+            "cpu",
+            "temperature",
+            "pulseaudio",
+            "backlight",
+            "clock",
+            "idle_inhibitor"
+        ],
         "sway/window": {
             "format": "{} ",
             "on-click": "swaymsg kill",
@@ -34,13 +54,19 @@
             "tooltip-format": "{used} / {total} used"
         },
         "memory": {
-            "format": " {}%",
+            "format": " {}%",
             "tooltip-format": "{used:0.1f}G / {total:0.1f}G used"
         },
         "temperature": {
             "critical-threshold": 80,
             "format": "{icon} {temperatureC}°C",
-            "format-icons": ["", "", "", "", ""]
+            "format-icons": [
+                "",
+                "",
+                "",
+                "",
+                ""
+            ]
         },
         "backlight": {
             "device": "intel_backlight",
@@ -48,25 +74,23 @@
             "on-scroll-down": "brightlight -pd 1",
             "on-scroll-up": "brightlight -pi 1",
             "format": "{icon} {percent}%",
-            "format-icons": ["", ""],
+            "format-icons": [
+                "",
+                ""
+            ],
             "on-click": "wdisplays"
         },
         "battery": {
-            "bat": "BAT0",
-            "adapter": "ADP1",
-            "interval": 5,
-            "full-at": 99,
+            "format": "{capacity}% {icon}",
+            "format-alt": "{time} {icon}",
+            "format-icons": ["", "", "", "", ""],
+            "format-charging": "{capacity}% ",
+            "interval": 30,
             "states": {
-                "full": 100,
-                "good": 99,
-                "warning": 30,
-                "critical": 15,
-                "empty": 5
+                "warning": 25,
+                "critical": 10
             },
-            "format": "{icon} {capacity}%",
-            "format-charging": " {capacity}%",
-            "format-plugged": " {capacity}%",
-            "format-icons": ["", "", "", "", ""]
+            "tooltip": false
         },
         "network#disconnected": {
             "tooltip-format": "No connection!",
@@ -114,7 +138,11 @@
                 "phone": "",
                 "portable": "",
                 "car": "",
-                "default": ["", "", ""]
+                "default": [
+                    "",
+                    "",
+                    ""
+                ]
             },
             "on-click": "pavucontrol"
         },

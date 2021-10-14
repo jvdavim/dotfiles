@@ -21,24 +21,20 @@ window#waybar.empty {
     color: rgba(0, 0, 0, 0);
 }
 
-.bottombar {
-    border-top: 3px solid rgba(100, 114, 125, 1);
-}
-
 #workspaces button {
-    padding: 0 5px;
+    padding: 0 4px;
     background-color: transparent;
     color: #ffffff;
 }
 
 #workspaces button:hover {
     background: rgba(0, 0, 0, 0.2);
-    box-shadow: inset 0 3px #ffffff;
+    box-shadow: inset 0 -2px #ffffff;
 }
 
 #workspaces button.focused {
     background-color: #64727D;
-    box-shadow: inset 0 3px #ffffff;
+    box-shadow: 0 -2px #ffffff inset;
 }
 
 #workspaces button.urgent {
@@ -63,19 +59,16 @@ window#waybar.empty {
     }
 }
 
-#battery.critical:not(.charging) {
-    background-color: #f53c3c;
-    color: #ffffff;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+#battery.warning {
+    color: rgba(255, 210, 4, 1);
 }
 
-#battery.warning:not(.charging) {
-    background-color: #f5ba3c;
-    color: #ffffff;
+#battery.critical {
+    color: rgba(238, 46, 36, 1);
+}
+
+#battery.charging {
+    color: rgba(217, 216, 216, 1);
 }
 
 #temperature.critical {
