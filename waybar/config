@@ -81,16 +81,21 @@
             "on-click": "wdisplays"
         },
         "battery": {
-            "format": "{capacity}% {icon}",
-            "format-alt": "{time} {icon}",
-            "format-icons": ["", "", "", "", ""],
-            "format-charging": "{capacity}% ",
-            "interval": 30,
+            "interval": 10,
             "states": {
-                "warning": 25,
-                "critical": 10
+                "warning": 30,
+                "critical": 15
             },
-            "tooltip": false
+            "format": "  {capacity}%",
+            "format-discharging": "{icon}  {capacity}%",
+            "format-icons": [
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "tooltip": true
         },
         "network#disconnected": {
             "tooltip-format": "No connection!",
@@ -158,7 +163,7 @@
             "on-click": "bash $HOME/.config/waybar/scripts/poweroff.sh"
         },
         "tray": {
-            "icon-size": 13,
+            "icon-size": 15,
             "spacing": 10
         }
     }
