@@ -16,22 +16,22 @@
 ;
 ;==========================================================
 [colors]
-background = #222
-background-alt = #444
-foreground = #dfdfdf
-foreground-alt = #555
+background = #CCFFFFFF
+background-alt = #fff
+foreground = #1d1d1d
+foreground-alt = #606060
 primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
 ;==========================================================
-[bar/mybar]
+[bar/main]
 monitor = ${env:MONITOR:}
 width = 100%
-height = 20
-radius = 0.0
+height = 22
+radius = 5.0
 fixed-center = true
-background = #111
-foreground = #fff
+background = ${colors.background}
+foreground = ${colors.foreground}
 line-size = 3
 line-color = #f00
 border-size = 0
@@ -50,11 +50,7 @@ font-7 = Font Awesome 5 Brands:pixelsize=10;1
 font-8 = feather:style=Regular
 modules-left = i3 xwindow
 modules-right = wired-network wireless-network xbacklight pulseaudio filesystem memory cpu battery date
-tray-position = right
-tray-padding = 0
-tray-maxsize = 18
-tray-scale = 1
-tray-detached = false
+tray-position = none
 scroll-up = #i3.prev
 scroll-down = #i3.next
 cursor-click = pointer
@@ -91,13 +87,13 @@ label-mode-foreground = #000
 label-mode-background = ${colors.primary}
 label-focused = %name%
 label-focused-background = ${module/bspwm.label-focused-background}
-label-focused-underline = ${module/bspwm.label-focused-underline}
+; label-focused-underline = ${module/bspwm.label-focused-underline}
 label-focused-padding = ${module/bspwm.label-focused-padding}
 label-unfocused = %name%
 label-unfocused-padding = ${module/bspwm.label-occupied-padding}
 label-visible = %name%
 label-visible-background = ${self.label-focused-background}
-label-visible-underline = ${self.label-focused-underline}
+; label-visible-underline = ${self.label-focused-underline}
 label-visible-padding = ${self.label-focused-padding}
 label-urgent = %name%
 label-urgent-background = ${module/bspwm.label-urgent-background}
@@ -186,7 +182,7 @@ format-connected = <ramp-signal> <label-connected>
 format-disconnected = <label-disconnected>
 format-packetloss = <animation-packetloss> <label-connected>
 label-connected = %essid% %signal% %local_ip%
-label-connected-foreground = #eefafafa
+label-connected-foreground = #000
 ramp-signal-0 = 😱
 ramp-signal-1 = 😠
 ramp-signal-2 = 😒

@@ -176,7 +176,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Polybar
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh --forest
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Screenshot
 bindsym Print exec flameshot gui
