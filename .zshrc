@@ -105,3 +105,5 @@ zstyle ":conda_zsh_completion:*" use-groups true
 zstyle ":conda_zsh_completion:*" show-unnamed true
 zstyle ":conda_zsh_completion:*" show-global-envs-first true
 eval "$(pyenv init -)"
+
+export PATH="$HOME/.poetry/bin:$PATH"

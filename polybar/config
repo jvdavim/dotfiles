@@ -16,9 +16,9 @@
 ;
 ;==========================================================
 [colors]
-background = #CCFFFFFF
-background-alt = #fff
-foreground = #1d1d1d
+background = #2b303b
+background-alt = #64727D
+foreground = #fff
 foreground-alt = #606060
 primary = #ffb52a
 secondary = #e60053
@@ -28,7 +28,7 @@ alert = #bd2c40
 monitor = ${env:MONITOR:}
 width = 100%
 height = 22
-radius = 5.0
+radius = 0
 fixed-center = true
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -50,7 +50,7 @@ font-7 = Font Awesome 5 Brands:pixelsize=10;1
 font-8 = feather:style=Regular
 modules-left = i3 xwindow
 modules-right = wired-network wireless-network xbacklight pulseaudio filesystem memory cpu battery date
-tray-position = none
+tray-position = right
 scroll-up = #i3.prev
 scroll-down = #i3.next
 cursor-click = pointer
@@ -99,23 +99,11 @@ label-urgent = %name%
 label-urgent-background = ${module/bspwm.label-urgent-background}
 label-urgent-padding = ${module/bspwm.label-urgent-padding}
 ;==========================================================
-[module/mpd]
-type = internal/mpd
-interval = 2
-host = 127.0.0.1
-port = 6600
-format-offline = 
-format-online = <label-song>
-format-online-padding = 3
-label-song =    %artist% - %title%
-label-song-maxlen = 70
-label-song-ellipsis = true
-;==========================================================
 [module/cpu]
 type = internal/cpu
 interval = 2
 format-prefix-foreground = ${colors.foreground}
-label =  %percentage%%
+label =  %percentage%%
 ;==========================================================
 [module/memory]
 type = internal/memory
@@ -128,7 +116,7 @@ interval = 60
 type = internal/fs
 mount-0 = /
 format-mounted = <label-mounted>
-label-mounted =  %percentage_used%% 
+label-mounted =  %percentage_used%% 
 ;==========================================================
 [module/date]
 type = internal/date
@@ -178,21 +166,15 @@ type = internal/network
 interface = wlp7s0
 accumulate-stats = true
 unknown-as-up = true
-format-connected = <ramp-signal> <label-connected>
+format-connected =   <label-connected>
 format-disconnected = <label-disconnected>
 format-packetloss = <animation-packetloss> <label-connected>
-label-connected = %essid% %signal% %local_ip%
-label-connected-foreground = #000
-ramp-signal-0 = 😱
-ramp-signal-1 = 😠
-ramp-signal-2 = 😒
-ramp-signal-3 = 😊
-ramp-signal-4 = 😃
-ramp-signal-5 = 😈
+label-connected = %signal%% %essid%
+label-connected-foreground = ${root.foreground}
 animation-packetloss-0 = ⚠
-animation-packetloss-0-foreground = #ffa64c
+animation-packetloss-0-foreground = ${root.foreground}
 animation-packetloss-1 = 📶
-animation-packetloss-1-foreground = #000000
+animation-packetloss-1-foreground = ${root.foreground}
 animation-packetloss-framerate = 500
 ;==========================================================
 [module/wired-network]
@@ -204,11 +186,11 @@ format-connected = <label-connected>
 format-disconnected = <label-disconnected>
 format-packetloss = <animation-packetloss> <label-connected>
 label-connected =  %local_ip%
-label-connected-foreground = #eefafafa
+label-connected-foreground = ${root.foreground}
 animation-packetloss-0 = ⚠
-animation-packetloss-0-foreground = #ffa64c
+animation-packetloss-0-foreground = ${root.foreground}
 animation-packetloss-1 = 📶
-animation-packetloss-1-foreground = #000000
+animation-packetloss-1-foreground = ${root.foreground}
 animation-packetloss-framerate = 500
 ;==========================================================
 [settings]
