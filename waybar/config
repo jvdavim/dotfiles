@@ -132,10 +132,10 @@
         },
         "pulseaudio": {
             "scroll-step": 1,
-            "format": "{icon} {volume}%  {format_source}",
+            "format": "{icon} {volume}% {format_source}",
             "format-muted": " {format_source}",
             "format-source": " {volume}%",
-            "format-source-muted": " ",
+            "format-source-muted": "",
             "format-icons": {
                 "headphone": "",
                 "phone": "",
@@ -154,11 +154,6 @@
             "exec": "bash $HOME/.config/waybar/scripts/weather.sh",
             "interval": 300,
             "on-click": "firefox https://wttr.in"
-        },
-        "custom/poweroff": {
-            "tooltip": false,
-            "format": "",
-            "on-click": "bash $HOME/.config/waybar/scripts/poweroff.sh"
         },
         "tray": {
             "icon-size": 15,
