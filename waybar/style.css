@@ -11,39 +11,39 @@
 }
 
 window#waybar {
-    background-color: #2b303b;
-    color: #ffffff;
+    background-color: rgb(43, 48, 59);
+    color: rgb(255, 255, 255);
     transition-property: background-color;
     transition-duration: .5s;
 }
 
 window#waybar.empty {
-    color: #00000000;
+    color: rgba(0, 0, 0, 0);
 }
 
 #workspaces button {
     padding: 0 4px;
     background-color: transparent;
-    color: #ffffff;
+    color: rgb(255, 255, 255);
 }
 
 #workspaces button:hover {
-    background: #00000033;
-    box-shadow: inset 0 -2px #ffffff;
+    background: rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 -2px rgb(255, 255, 255);
 }
 
 #workspaces button.focused {
-    background-color: #64727D;
-    box-shadow: 0 -2px #ffffff inset;
+    background-color: rgb(100, 114, 125);
+    box-shadow: 0 -2px rgb(255, 255, 255) inset;
 }
 
 #workspaces button.urgent {
-    background-color: #eb4d4b;
+    background-color: rgb(235, 77, 75);
 }
 
 #mode {
-    background-color: #64727D;
-    border-top: 3px solid #ffffff;
+    background-color: rgb(100, 114, 125);
+    border-top: 3px solid rgb(255, 255, 255);
 }
 
 #backlight, #battery, #clock, #cpu, #custom-mail, #custom-poweroff, #custom-weather, #disk, #idle_inhibitor, #memory, #mode, #network.vpn, #network.wifi, #network.ethernet, #network.disconnected, #pulseaudio, #taskbar, #temperature, #tray {
@@ -54,33 +54,33 @@ window#waybar.empty {
 
 @keyframes blink {
     to {
-        background-color: #ffffff;
-        color: #000000;
+        background-color: rgb(255, 255, 255);
+        color: rgb(0, 0, 0);
     }
 }
 
 #battery.warning {
-    color: #ffd204;
+    color: rgb(255, 210, 4);
 }
 
 #battery.critical {
-    color: #ee2e24;
+    color: rgb(238, 46, 36);
 }
 
 #battery.charging {
-    color: #d9d8d8;
+    color: rgb(217, 216, 216);
 }
 
 #temperature.critical {
-    background-color: #eb4d4b;
+    background-color: rgb(235, 77, 75);
 }
 
 #taskbar button:hover {
-    background: #00000033;
-    box-shadow: inset 0 3px #ffffff;
+    background: rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 3px rgb(255, 255, 255);
 }
 
 #taskbar button.active {
-    background-color: #64727D;
-    box-shadow: inset 0 3px #ffffff;
+    background-color: rgb(100, 114, 125);
+    box-shadow: inset 0 3px rgb(255, 255, 255);
 }
