@@ -70,7 +70,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git docker postgres vscode genpass ssh-agent copydir cp copyfile mvn ng ripgrep dotnet fzf systemadmin conda-zsh-completion kubectl)
+plugins=(git docker postgres vscode genpass ssh-agent copydir cp copyfile mvn ng ripgrep dotnet fzf systemadmin kubectl)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -100,10 +100,4 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 autoload -U compinit && compinit
-zstyle ':completion::complete:*' use-cache 1
-zstyle ":conda_zsh_completion:*" use-groups true
-zstyle ":conda_zsh_completion:*" show-unnamed true
-zstyle ":conda_zsh_completion:*" show-global-envs-first true
 eval "$(pyenv init -)"
-
-export PATH="$HOME/.poetry/bin:$PATH"
