@@ -42,7 +42,7 @@
             "tooltip": false
         },
         "disk": {
-            "format": "{}% ",
+            "format": "{percentage_used}% ",
             "tooltip-format": "{used} / {total} used"
         },
         "memory": {
