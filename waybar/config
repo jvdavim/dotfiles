@@ -33,9 +33,9 @@
         },
         "clock": {
             "interval": 1,
-            "format": "<b>{:%H:%M:%S}</b>",
+            "format": "{:%Y-%m-%d %H:%M:%S}",
             "format-alt": "{:%Y-%m-%d}",
-            "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+            "tooltip-format": "<big>{:%Y %B}</big>\n<tt><big>{calendar}</big></tt>"
         },
         "cpu": {
             "format": "{usage}% ",

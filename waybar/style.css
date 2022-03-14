@@ -1,7 +1,7 @@
 * {
     border: none;
     border-radius: 0;
-    font-family: "Clear Sans", "Font Awesome 5 Free Solid";
+    font-family: "Iosevka SS05", "Font Awesome 6 Free Solid";
     font-size: 12px;
     min-height: 0;
 }
@@ -83,7 +83,7 @@ window#waybar.empty {
 }
 
 #battery.charging {
-    color: rgb(217, 216, 216);
+    color: rgb(0, 0, 0);
 }
 
 #temperature.critical {
