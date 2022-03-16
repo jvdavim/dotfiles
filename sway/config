@@ -17,7 +17,7 @@
     set $menu wofi
 
 ### Fonts configuration
-    font pango:Cantarell 8
+    font Iosevka SS05 8
 
 ### Output configuration
 #
@@ -27,14 +27,14 @@
 #
 # HDMI up:
 #
-    output eDP-1 resolution 1366x768 position 277,1080
-    output HDMI-A-1 resolution 1920x1080 position 0,0
+    # output eDP-1 resolution 1366x768 position 277,1080
+    # output HDMI-A-1 resolution 1920x1080 position 0,0
 #
 # HDMI right:
 #
-    # output eDP-1 resolution 1366x768 position 0,312
-    # output HDMI-A-1 resolution 1920x1080 position 1366,0
-#
+    output eDP-1 resolution 1366x768 position 0,312
+    output HDMI-A-1 resolution 1920x1080 position 1366,0
+
 # HDMI left:
 #
     # output eDP-1 resolution 1366x768 position 1920,312
@@ -153,7 +153,10 @@
     bindsym $mod+Shift+0 move container to workspace number 10
 
     # Move workspace to other output
-    bindsym $mod+m move workspace to output up
+    bindsym $mod+Ctrl+Up move workspace to output up
+    bindsym $mod+Ctrl+Down move workspace to output down
+    bindsym $mod+Ctrl+Left move workspace to output left
+    bindsym $mod+Ctrl+Right move workspace to output right
 
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
