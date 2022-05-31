@@ -19,7 +19,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id setxkbmap br
 
 # Set wallpaper
-exec_always --no-startup-id feh --random --bg-scale ~/Pictures/Wallpapers/*
+exec_always --no-startup-id feh --random --bg-scale ~/pictures/wallpapers/*
 
 # Compton
 exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
@@ -48,7 +48,7 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id dmenu_run
+bindsym $mod+d exec --no-startup-id rofi -show drun
 # rofi alternatively
 # bindsym $mod+d exec $HOME/.config/rofi/launchers/misc/launcher.sh
 
@@ -214,6 +214,7 @@ bindsym XF86AudioPrev exec playerctl previous
 focus_follows_mouse no
 
 # Floating windows
+for_window [class=".*"] border pixel 0
 for_window [class="(?i)telegram"] floating enable
 for_window [class="(?i)thunar"] floating enable
 for_window [class="(?i)deepin-image-viewer"] floating enable
@@ -227,3 +228,5 @@ for_window [class="(?i)bitwarden"] floating enable
 for_window [class="(?i)mpv"] floating enable
 for_window [class="(?i)steam"] floating enable
 for_window [window_role="pop-up"] floating enable
+
+gaps inner 20
