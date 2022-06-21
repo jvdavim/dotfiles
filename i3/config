@@ -19,7 +19,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id setxkbmap br
 
 # Set wallpaper
-exec_always --no-startup-id feh --random --bg-scale ~/pictures/wallpapers/*
+exec_always --no-startup-id feh --random --bg-scale ~/Pictures/wallpapers/*
 
 # Compton
 exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
