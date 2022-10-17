@@ -99,13 +99,27 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# startx on login
+[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] || return
+echo
+read -p "Start Xorg[Y/y]? " -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+    exec startx
+fi 
+
+# Load composition
 autoload -U compinit && compinit
+
+# Init pyenv
 eval "$(pyenv init -)"
 
+# nvm config
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 
 # Load Angular CLI autocompletion.
 source <(ng completion script)
