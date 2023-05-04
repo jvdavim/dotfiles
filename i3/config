@@ -190,7 +190,11 @@ bar {
 }
 
 # jvdavim
+exec --no-startup-id feh --bg-fill /home/jvdavim/Pictures/wallpapers/tomioka.jpg
+exec --no-startup-id flameshot
 
 bindsym Print exec "flameshot gui"
 
-exec --no-startup-id feh --bg-fill /home/jvdavim/Pictures/wallpapers/tomioka.jpg
+
+for_window [class="Pavucontrol"] floating enable
+for_window [class="Leafpad"] floating enable
