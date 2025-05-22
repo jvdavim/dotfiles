@@ -103,9 +103,12 @@ source $ZSH/oh-my-zsh.sh
 # Load atuin (shell fuzzy history)
 eval "$(atuin init zsh --disable-up-arrow)"
 
-# Load asdf (tool version manager) shell script
-. "$HOME/.asdf/asdf.sh"
+alias gotop='TERM="${TERM/#tmux/screen}" gotop'
+
+source /usr/share/nvm/init-nvm.sh
+
+export PATH="$HOME/go/bin:$PATH"
+export PATH=$(go env GOPATH)/bin:$PATH
 
 # Set vi mode in zsh
 set -o vi
-
