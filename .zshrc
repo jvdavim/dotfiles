@@ -70,7 +70,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git asdf ng)
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -104,11 +104,15 @@ source $ZSH/oh-my-zsh.sh
 eval "$(atuin init zsh --disable-up-arrow)"
 
 alias gotop='TERM="${TERM/#tmux/screen}" gotop'
+alias cp='advcp -g'
+alias mv='advmv -g'
 
 source /usr/share/nvm/init-nvm.sh
 
 export PATH="$HOME/go/bin:$PATH"
 export PATH=$(go env GOPATH)/bin:$PATH
 
+
 # Set vi mode in zsh
 set -o vi
+
