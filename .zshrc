@@ -104,8 +104,6 @@ source $ZSH/oh-my-zsh.sh
 eval "$(atuin init zsh --disable-up-arrow)"
 
 alias gotop='TERM="${TERM/#tmux/screen}" gotop'
-alias cp='advcp -g'
-alias mv='advmv -g'
 
 source /usr/share/nvm/init-nvm.sh
 

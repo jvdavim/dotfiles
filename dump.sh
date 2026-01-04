@@ -1,6 +1,11 @@
-cp -R ~/.config/i3 .
-cp -R ~/.config/kitty .
-cp -R ~/.config/picom .
-cp -R ~/.config/tmux .
-cp -R ~/.config/hypr .
-cp ~/.zshrc .
+#!/bin/bash
+
+REPO_DIR="$(cd "$(dirname "$0")" && pwd)"
+FOLDERS="i3 kitty picom tmux hypr waybar wofi mimeapps.list"
+
+for folder in $FOLDERS; do
+    rsync -av --exclude='.git' ~/.config/"$folder" "$REPO_DIR/.config/"
+done
+
+cp ~/.zshrc "$REPO_DIR"
+
