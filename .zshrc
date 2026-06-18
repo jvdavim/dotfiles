@@ -83,7 +83,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
+export EDITOR='nvim'
 # else
 #   export EDITOR='mvim'
 # fi
@@ -114,3 +114,21 @@ export PATH=$(go env GOPATH)/bin:$PATH
 # Set vi mode in zsh
 set -o vi
 
+. "$HOME/.local/bin/env"
+
+# Android development
+export JAVA_HOME=/usr/lib/jvm/java-21-openjdk
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools:$PATH
+
+# opencode
+export PATH=/home/jvdavim/.opencode/bin:$PATH
+
+unalias gg
+
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/jvdavim/google-cloud-sdk/path.zsh.inc' ]; then . '/home/jvdavim/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/jvdavim/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/jvdavim/google-cloud-sdk/completion.zsh.inc'; fi

@@ -31,6 +31,7 @@ video/x-ms-asf=vlc.desktop
 video/x-ogm+ogg=vlc.desktop
 video/x-theora+ogg=vlc.desktop
 application/ogg=vlc.desktop
+inode/directory=org.kde.dolphin.desktop
 
 [Added Associations]
 x-scheme-handler/http=firefox.desktop;
