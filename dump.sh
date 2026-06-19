@@ -8,4 +8,5 @@ for folder in $FOLDERS; do
 done
 
 cp ~/.zshrc "$REPO_DIR"
+cp ~/.xinitrc "$REPO_DIR"
 

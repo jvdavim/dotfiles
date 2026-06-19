@@ -10,3 +10,4 @@ for folder in $FOLDERS; do
 done
 
 cp "$REPO_DIR/.zshrc" ~/.zshrc
+cp "$REPO_DIR/.xinitrc" ~/.xinitrc
