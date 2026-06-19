@@ -114,7 +114,7 @@ export PATH=$(go env GOPATH)/bin:$PATH
 # Set vi mode in zsh
 set -o vi
 
-. "$HOME/.local/bin/env"
+# . "$HOME/.local/bin/env"
 
 # Android development
 export JAVA_HOME=/usr/lib/jvm/java-21-openjdk

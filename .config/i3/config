@@ -29,7 +29,7 @@ exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id picom
 exec --no-startup-id nm-applet
 exec --no-startup-id feh --bg-fill ~/.config/omarchy/current/background
-exec --no-startup-id flameshot
+exec --no-startup-id env QT_QPA_PLATFORM=xcb flameshot
 exec --no-startup-id setxkbmap -layout us -variant intl
 
 bindsym $mod+Return exec --no-startup-id $terminal
@@ -126,9 +126,9 @@ bindsym XF86AudioPause exec --no-startup-id playerctl play-pause
 bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
 bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 
-bindsym Print exec --no-startup-id flameshot gui
-bindsym Shift+Print exec --no-startup-id flameshot gui
-bindsym Control+Print exec --no-startup-id flameshot full -c
+bindsym Print exec --no-startup-id env QT_QPA_PLATFORM=xcb flameshot gui
+bindsym Shift+Print exec --no-startup-id env QT_QPA_PLATFORM=xcb flameshot gui
+bindsym Control+Print exec --no-startup-id env QT_QPA_PLATFORM=xcb flameshot full -c
 
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -171,5 +171,6 @@ bar {
 }
 
 for_window [class="Leafpad"] floating enable
+for_window [class="com.mitchellh.ghostty"] border pixel 0
 assign [class="(?i)steam"] 4
 assign [class="(?i)dota2"] 1
