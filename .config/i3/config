@@ -28,7 +28,7 @@ client.background       #111111
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id picom
 exec --no-startup-id nm-applet
-exec --no-startup-id feh --bg-fill ~/.config/omarchy/current/background
+exec ~/.config/i3/random_wallpaper.sh
 exec --no-startup-id env QT_QPA_PLATFORM=xcb flameshot
 exec --no-startup-id setxkbmap -layout us -variant intl
 
